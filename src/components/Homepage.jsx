@@ -5,6 +5,7 @@ import { Typography, Row, Col, Statistic } from "antd";
 import { Cryptocurrencies, News } from "../components";
 
 import { useGetCryptosQuery } from "../services/cryptoApi";
+import Loader from "./Loader";
 
 const { Title } = Typography;
 
@@ -14,7 +15,7 @@ const Homepage = () => {
 
   console.log("Coins Data: ", data);
 
-  if (isFetching) return "loading...";
+  if (isFetching) return <Loader />;
 
   return (
     <>
